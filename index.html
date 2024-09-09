@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lab2</title>
-    <style>s
+    <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
@@ -35,6 +35,7 @@
             color: white;
             margin: 0 15px;
             text-decoration: none;
+            cursor: pointer;
         }
         .navbar a:hover {
             text-decoration: underline;
@@ -51,7 +52,23 @@
             background-color: #333;
             color: white;
         }
+        .content-section {
+            display: none;
+        }
     </style>
+    <script>
+        // Function to show the clicked section
+        function showSection(sectionId) {
+            // Hide all sections
+            var sections = document.querySelectorAll('.content-section');
+            sections.forEach(function(section) {
+                section.style.display = 'none';
+            });
+
+            // Show the clicked section
+            document.getElementById(sectionId).style.display = 'block';
+        }
+    </script>
 </head>
 <body>
 
@@ -60,41 +77,33 @@
     </div>
 
     <div class="navbar">
-        <a href="#Minii tuhai">Minii tuhai</a>
-        <a href="#Naizuud">Naizuud</a>
-        <a href="#Ger bul">Ger bul</a>
-        <a href="#Holboo barih">Holboo barih</a>
+        <a onclick="showSection('about')">Minii tuhai</a>
+        <a onclick="showSection('friends')">Naizuud</a>
+        <a onclick="showSection('family')">Ger bul</a>
+        <a onclick="showSection('contact')">Holboo barih</a>
     </div>
 
     <table>
-        <tr>
-            <th id="Minii tuhai">Minii tuhai</th>
-        </tr>
-        <tr>
+        <tr id="about" class="content-section">
+            <th>Minii tuhai</th>
             <td>
                 <p>Sain baina uu! Namaig Byambadorj ovogtoi Erkhembayar gedeg. Bi Mongol ulsiin ih surguuliin Medeellin systemiin angid suraltsdag. 2004 oii 7 sariin 15 nd tursun. 11-r surguulig tugssun</p>
             </td>
         </tr>
-        <tr>
-            <th id="Naizuud">Naizuud</th>
-        </tr>
-        <tr>
+        <tr id="friends" class="content-section">
+            <th>Naizuud</th>
             <td>
                 <p>Nadad mash chuhal 3 naiz baigaa. Ebi eba ebe. Bid hamt hicheel hiih durtai.</p>
             </td>
         </tr>
-        <tr>
-            <th id="Ger bul">Ger bul</th>
-        </tr>
-        <tr>
+        <tr id="family" class="content-section">
+            <th>Ger bul</th>
             <td>
                 <p>Minii ger bul nadad hamgiin nandin zuil. Bi ailiin baga. Deeree 1 ahtai </p>
             </td>
         </tr>
-        <tr>
-            <th id="Holboo barih">Holboo barih</th>
-        </tr>
-        <tr>
+        <tr id="contact" class="content-section">
+            <th>Holboo barih</th>
             <td>
                 <p>email: <a href="mailto:your.email@example.com">erhem.phone@gmail.com</a></p>
             </td>
@@ -104,6 +113,11 @@
     <div class="footer">
         <p>&copy; 2024© Huviin Website</p>
     </div>
+
+    <script>
+        // Initially show the "Minii tuhai" section
+        showSection('about');
+    </script>
 
 </body>
 </html>
